@@ -23,6 +23,9 @@
         "php": ">=7.0",
         "zendframework/zend-servicemanager": "^3.0.3",
         "zendframework/zend-view": "^2.6",
+        "zendframework/zend-captcha": "^2.5",
+        "zendframework/zend-form": "^2.8",
+        "zendframework/zend-http": "^2.5"
     },
     "autoload" : {
     "psr-4" : {

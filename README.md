@@ -1,9 +1,8 @@
-# Zf3Php7Recaptcha - A ZF2 Module for Google ReCaptchaV2 
-Build Status: [![build status](https://ci.browserlife.de/projects/1/status.png?ref=master)](https://ci.browserlife.de/projects/1?ref=master)
- 
-This modules makes it possible to use the new ReCaptcha [LINK](https://www.google.com/recaptcha) in your ZendFramework2 (ZF2) projects. 
+# Zf3Php7Recaptcha - A ZF3 Module for Google ReCaptchaV2 
 
-I created this module, since [ZendFrameworkService\ReCaptcha](https://github.com/zendframework/ZendService_ReCaptcha) seems to be dead and is still on RCv1. 
+Zf3Php7Recaptcha is forked by [zf2-recaptcha](https://github.com/malganis93/BrlReCaptcha) features.
+
+
 ## Installation 
 ### with composer
 Just add the following line to your requirements:

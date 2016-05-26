@@ -7,16 +7,17 @@
  * Time: 20:00.
  */
 
-return array(
+namespace Zf3Php7Recaptcha;
 
+return array(
     'service_manager' => array(
         'invokeables' => array(
-            'Zf3Php7Recaptcha\Service\ReCaptcha' => 'Zf3Php7Recaptcha\Service\ReCaptchaService',
+            'Zf3Php7Recaptcha\Service\ReCaptcha' => Service\ReCaptchaService::class,
         ),
     ),
     'view_helpers' => array(
         'invokables' => array(
-            'zf3Php7ReCaptcha' => 'Zf3Php7Recaptcha\Helper\ReCaptcha',
+            'zf3Php7ReCaptcha' => Helper\ReCaptcha::class,
 
         ),
     ),
