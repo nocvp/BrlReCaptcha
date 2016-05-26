@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Zf3-php7-recaptcha-v2 by nocvp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Zf3-php7-recaptcha-v2</h1>
+      <h2 class="project-tagline">A ReCaptcha v2.0 module for ZF2 (Zend Framework 2) </h2>
+      <a href="https://github.com/nocvp/zf3-php7-recaptcha-v2" class="btn">View on GitHub</a>
+      <a href="https://github.com/nocvp/zf3-php7-recaptcha-v2/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/nocvp/zf3-php7-recaptcha-v2/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="zf3php7recaptcha---a-zf3-module-for-google-recaptchav2" class="anchor" href="#zf3php7recaptcha---a-zf3-module-for-google-recaptchav2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Zf3Php7Recaptcha - A ZF3 Module for Google ReCaptchaV2</h1>
+
+<p>Zf3Php7Recaptcha is forked by <a href="https://github.com/malganis93/BrlReCaptcha">zf2-recaptcha</a> features.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<h3>
+<a id="with-composer" class="anchor" href="#with-composer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>with composer</h3>
+
+<p>Just add the following line to your requirements:</p>
+
+<div class="highlight highlight-source-json"><pre><span class="pl-s"><span class="pl-pds">"</span>nocvp/zf3-php7-recaptcha-v2<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>dev-master<span class="pl-pds">"</span></span></pre></div>
+
+<p>and run</p>
+
+<div class="highlight highlight-source-shell"><pre>php composer.phar update</pre></div>
+
+<p>Since there are problems with the SSL-Cert if you use Adapter\Socket, please install php-curl! </p>
+
+<p>Then activate the module in your application.config.php :</p>
+
+<pre><code>```php
+return array(
+    'modules' =&gt; array(
+        // ...
+        'Zf3Php7Recaptcha',
+    ),
+    // ...
+);
+```
+</code></pre>
+
+<h2>
+<a id="get-your-private-key" class="anchor" href="#get-your-private-key" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Get your private-key</h2>
+
+<p>To use this service, you have to register at <a href="https://www.google.com/recaptcha">Google ReCaptcha</a> using your Google-Account.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<h3>
+<a id="with-zendfrom" class="anchor" href="#with-zendfrom" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>with Zend\From</h3>
+
+<p>This module works similar as <a href="https://github.com/zendframework/ZendService_ReCaptcha">ZendFrameworkService\ReCaptcha</a>. </p>
+
+<p>Just add the following lines to your form creation:</p>
+
+<pre><code>$element = new \Zend\Captcha\Captcha('g-recaptcha-response');
+$element-&gt;setCaptcha(new Zf3Php7Recaptcha\ReCaptcha(array('private_key' =&gt; 'YOUR_SECRET FROM GOOGLE', 'public_key' =&gt; 'YOUR_PUBLIC_KEY', 'theme' =&gt; 'dark')));
+$form-&gt;add($element);
+
+</code></pre>
+
+<p>Important: The element has to be named g-recaptcha-response due to the reason that the JS from google creates this virtual input.</p>
+
+<p>Remember to add this element to your validationChain as well.</p>
+
+<p>Note: The theme parameter is not required. By default the light theme is used. </p>
+
+<p>It acts the same way as any other built-in captcha solution.</p>
+
+<h3>
+<a id="with-servicemanager" class="anchor" href="#with-servicemanager" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>with ServiceManager</h3>
+
+<p>If you like to implement the view on your own, just use the Service\ReCaptchaService. It handles the whole communication between your code and the ReCaptcha API. </p>
+
+<pre><code>$recaptcha = $serviceLocator-&gt;get('Zf3Php7Recaptcha\Service\ReCaptcha');
+
+</code></pre>
+
+<h3>
+<a id="other" class="anchor" href="#other" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>other</h3>
+
+<p>just look into the sources! It's pretty easy to understand.</p>
+
+<h2>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO</h2>
+
+<ul>
+<li>PHPUnit Tests are missing -&gt; Will do this in the next couple of days</li>
+<li>some error handling is qnd</li>
+<li>better documentation </li>
+</ul>
+
+<h2>
+<a id="questions" class="anchor" href="#questions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Questions?</h2>
+
+<p>If you have any problems or questions regarding my code, please create an issue.
+Since i'm using this module for my own projects i'm interested in keeping this up to date!</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/nocvp/zf3-php7-recaptcha-v2">Zf3-php7-recaptcha-v2</a> is maintained by <a href="https://github.com/nocvp">nocvp</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
