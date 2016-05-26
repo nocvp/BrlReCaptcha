@@ -6,7 +6,7 @@
  * Date: 18.03.15
  * Time: 00:43.
  */
-namespace BrlReCaptcha\Helper;
+namespace Zf3Php7Recaptcha\Helper;
 
 use Zend\Form\ElementInterface;
 use Zend\Form\View\Helper\FormInput;
@@ -37,7 +37,7 @@ class ReCaptcha extends FormInput
      */
     public function render(ElementInterface $element)
     {
-        /** @var \BrlReCaptcha\ReCaptcha $captcha */
+        /** @var \Zf3Php7Recaptcha\ReCaptcha $captcha */
         $captcha = $element->getCaptcha();
 
         $pubkey = $captcha->getPubkey();
