@@ -6,7 +6,7 @@
  * Date: 18.03.15
  * Time: 00:30.
  */
-namespace BrlReCaptcha\Service;
+namespace Zf3Php7Recaptcha\Service;
 
 use Zend\Http\Client as HttpClient;
 use Zend\Http\Request as HttpRequest;
