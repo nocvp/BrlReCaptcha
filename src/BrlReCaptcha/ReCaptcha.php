@@ -6,10 +6,10 @@
  * Date: 18.03.15
  * Time: 00:33.
  */
-namespace BrlReCaptcha;
+namespace Zf3Php7Recaptcha;
 
 use Traversable;
-use BrlReCaptcha\Service\ReCaptchaService;
+use Zf3Php7Recaptcha\Service\ReCaptchaService;
 use Zend\Captcha\AbstractAdapter;
 use Zend\Validator\Exception;
 
@@ -19,7 +19,7 @@ use Zend\Validator\Exception;
 class ReCaptcha extends AbstractAdapter
 {
     /**
-     * @var \BrlReCaptcha\Service\ReCaptchaService
+     * @var \Zf3Php7Recaptcha\Service\ReCaptchaService
      */
     protected $service;
 
@@ -41,7 +41,7 @@ class ReCaptcha extends AbstractAdapter
     );
 
     /**
-     * @return \BrlReCaptcha\Service\ReCaptchaService
+     * @return \Zf3Php7Recaptcha\Service\ReCaptchaService
      */
     public function getService()
     {
