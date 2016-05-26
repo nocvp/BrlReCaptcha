@@ -11,12 +11,12 @@ return array(
 
     'service_manager' => array(
         'invokeables' => array(
-            'BrlReCaptcha\Service\ReCaptcha' => 'BrlReCaptcha\Service\ReCaptchaService',
+            'Zf3Php7Recaptcha\Service\ReCaptcha' => 'Zf3Php7Recaptcha\Service\ReCaptchaService',
         ),
     ),
     'view_helpers' => array(
         'invokables' => array(
-            'browserlife/recaptcha' => 'BrlReCaptcha\Helper\ReCaptcha',
+            'zf3Php7ReCaptcha' => 'Zf3Php7Recaptcha\Helper\ReCaptcha',
 
         ),
     ),
