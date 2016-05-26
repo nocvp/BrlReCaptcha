@@ -1,9 +1,9 @@
 {
-    "name": "browserlife/zf2-recaptcha",
+    "name": "nocvp/zf3-php7-recaptcha-v2",
     "type": "library",
-    "description": "ReCaptcha v2.0 module for Zend Framework 2 (ZF2)",
-    "keywords": ["zf2","recaptcha",  "captcha"],
-    "homepage": "https://github.com/malganis93/BrlReCaptcha",
+    "description": "ReCaptcha v2.0 module for Zend Framework 3 (ZF3) and Php7",
+    "keywords": ["zf3", "php7", "recaptcha", "captcha"],
+    "homepage": "https://github.com/nocvp/zf3-php7-recaptcha-v2",
     "license": "MIT",
     "authors": [
         {
@@ -11,18 +11,25 @@
             "email": "lars@browserlife.de",
             "homepage": "http://browserlife.de",
             "role": "Developer"
+        },
+        {
+            "name": "Semih Sarı",
+            "email": "semihsari@gmail.com",
+            "homepage": "http://noc.com.tr",
+            "role": "Developer"
         }
     ],
     "require": {
-        "php": ">=5.3.0",
-        "zendframework/zendframework": "~2.3"
+        "php": ">=7.0",
+        "zendframework/zend-servicemanager": "^3.0.3",
+        "zendframework/zend-view": "^2.6",
     },
     "autoload" : {
     "psr-4" : {
-      "BrlReCaptcha\\" : "src/"
+      "Zf3Php7Recaptcha\\" : "src/"
     },
     "psr-0" : {
-      "BrlReCaptcha\\" : "src/"
+      "Zf3Php7Recaptcha\\" : "src/"
     },
     "classmap" : [ "./" ]
   }
