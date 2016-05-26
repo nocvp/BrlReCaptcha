@@ -6,7 +6,7 @@
  * Date: 18.03.15
  * Time: 19:52.
  */
-namespace BrlReCaptcha;
+namespace Zf3Php7Recaptcha;
 
 class Module
 {
