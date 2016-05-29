@@ -171,8 +171,9 @@ class ReCaptchaService
         if ($content['success'] == true) {
             return true;
         } else {
-            //TODO: One or more codes at ones?
-            $this->setErrorCode(implode(',', $content['error-codes']));
+            if (!empty($content['error-codes'])) {
+                $this->setErrorCode(implode(',', $content['error-codes']));
+            }
 
             return false;
         }
