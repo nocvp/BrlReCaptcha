@@ -11,7 +11,7 @@ namespace Zf3Php7Recaptcha;
 
 return array(
     'service_manager' => array(
-        'invokeables' => array(
+        'invokables' => array(
             'Zf3Php7Recaptcha\Service\ReCaptcha' => Service\ReCaptchaService::class,
         ),
     ),
