@@ -189,6 +189,6 @@ class ReCaptcha extends AbstractAdapter
      */
     public function getHelperName()
     {
-        return 'browserlife/recaptcha';
+        return 'zf3Php7ReCaptcha';
     }
 }
